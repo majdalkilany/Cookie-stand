@@ -2,4 +2,22 @@ td, th{
     border: 1px solid black;
     padding: auto;
     margin: 150%;
+
+}
+body{
+    background-image: url(img/cutter.jpg);
+    padding: 10px;
+    margin: 10px;
+}
+h1{
+    text-align: center;
+    position: sticky;
+    font-size: -webkit-xxx-large;
+
+
+}
+h2{
+    font-size: x-large;
+    margin: 10px;
+
 }

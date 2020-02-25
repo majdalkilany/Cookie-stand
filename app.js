@@ -2,7 +2,7 @@
 'use strict'
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', "12pm", '1pm',
-'2pm', '3pm', '14pm', '5pm', "6pm", '7pm' ];
+'2pm', '3pm', '14pm', '5pm', "6pm", '7pm','total' ];
 var total=0;
 
 function Locations(name, min1 ,max1  , avrCoocHour) {
@@ -17,7 +17,7 @@ this.avgSalesHoure= [];
 
 }
 Locations.prototype.getRandomCustomNum  = function(){
-for (var i = 0; i < hours.length ; i++) {
+for (var i = 0; i < 14 ; i++) {
         this.randomCostumerArray.push(getRandomNum(this.min1, this.max1))
         this.avgSalesHoure[i] = Math.ceil(6.3 * this.randomCostumerArray[i])
         total = total + this.avgSalesHoure[i]
@@ -66,17 +66,17 @@ Locations.prototype.printSales  = function(){
     var td1 = document.createElement('td')
     tableRow.appendChild(td1);
     td1.textContent = this.name;
-    for( var i =0 ; i <= hours.length; i++){
+    for( var i =0 ; i < hours.length; i++){
 
        
         var td1 = document.createElement('td')
         tableRow.appendChild(td1);
         td1.textContent = this.avgSalesHoure[i];
-        if (i >= 13){
+        if (i > 13){
             i++;
             var td1 = document.createElement('td')
             tableRow.appendChild(td1);
-            td1.textContent = this.avgSalesHoure[14];
+            td1.textContent = this.avgSalesHoure[15];
         }
     }
    
@@ -110,17 +110,25 @@ tablEl.appendChild(tableFooter);
  var th1 = document.createElement('th')
  tableFooter.appendChild(th1);
 th1.textContent = "mmmm";
-for(var i = 0; i < hours.length ;i ++){
-     sum[i]  = seattle.avgSalesHoure[i] + tokyo.avgSalesHoure[i] +paris.avgSalesHoure[i]+dubai.avgSalesHoure[i]
-    +lima.avgSalesHoure[i] ;
-      var th1 = document.createElement('th');
-      tableFooter.appendChild(th1);
-      th1.textContent = sum[i];
+var Ssum = 0 ; 
+for(var i = 0; i < hours.length  ;i ++){
+    if (i == 14) {
+        var th1 = document.createElement('th');
+        tableFooter.appendChild(th1);
+        th1.textContent = Ssum + seattle.avgSalesHoure[14] + tokyo.avgSalesHoure[14] +paris.avgSalesHoure[14]+dubai.avgSalesHoure[14]
+        +lima.avgSalesHoure[14] ; 
+    }
+    else{
+        sum[i]  = seattle.avgSalesHoure[i] + tokyo.avgSalesHoure[i] +paris.avgSalesHoure[i]+dubai.avgSalesHoure[i]
+        +lima.avgSalesHoure[i] ;
+         Ssum += sum[i] ;  
+          var th1 = document.createElement('th');
+          tableFooter.appendChild(th1);
+          th1.textContent = sum[i];
 
+    }
+     
     
   }
 
-  var th1 = document.createElement('th');
-      tableFooter.appendChild(th1);
-      th1.textContent = tokyo.avgSalesHoure[14] + seattle.avgSalesHoure[14] + paris.avgSalesHoure[14] + dubai.avgSalesHoure[14]
-      + lima.avgSalesHoure[14]  
+  
