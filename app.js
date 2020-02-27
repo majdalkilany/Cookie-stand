@@ -23,6 +23,7 @@ for (var i = 0; i < 14 ; i++) {
         total = total + this.avgSalesHoure[i]
 }
         this.avgSalesHoure.push(total);
+        total = 0;
 
 }
 function getRandomNum(min , max ) {
@@ -130,5 +131,23 @@ for(var i = 0; i < hours.length  ;i ++){
      
     
   }
+
+  
+var newBranch = document.getElementById('Branch')
+newBranch.addEventListener('submit' , function (event){
+    event.preventDefault();
+
+    console.log(event.target)
+    var name = event.target.name.value;
+    var min1 =  event.target.min1.value;
+    var max1 =  event.target.max1.value ;
+    var avrCoocHour =  event.target.avrCoocHour.value;
+    var max1 =  event.target.avrCoocHour.value;
+    var majd = new Locations(name,min1,max1,avrCoocHour)
+    majd.getRandomCustomNum();
+    majd.printSales();
+
+}) 
+
 
   
