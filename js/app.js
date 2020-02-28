@@ -1,5 +1,7 @@
-var hours = [ '6am','7am','8am','9am','10am','11am',"12am",'1am',
-'2am','3am','14am','5am',"6am",'am7','8am'];
+'use strect'
+
+var hours = [ '6am','7am','8am','9am','10am','11am',"12pm",'1pm',
+'2pm','3pm','4pm','5pm',"6pm",'7pm','8pm'];
 var Seattle = {
     name : "Seattle" , 
     min1: 23,   
@@ -92,19 +94,15 @@ console.log(Paris.getRandomCustomNum());
 console.log(Lima.getRandomCustomNum());
 
 function getRandomNum(min , max ) {
-    minRan = Math.ceil(min);
-    maxRan = Math.floor(max);
+   var  minRan = Math.ceil(min);
+   var  maxRan = Math.floor(max);
     return Math.floor(Math.random() * (maxRan - minRan)) + minRan;
 }
 // console.log(getnum)
 var container = document.getElementById('container');
 console.log(Seattle.getRandomCustomNum());
 console.log(Tokyo.getRandomCustomNum());
-function getRandomNum(min , max ) {
-    minRan = Math.ceil(min);
-    maxRan = Math.floor(max);
-    return Math.floor(Math.random() * (maxRan - minRan)) + minRan;
-}
+// 
 // console.log(getnum)
 var container = document.getElementById('container');
 printSales(hours,Seattle);
@@ -131,5 +129,3 @@ function printSales(hours , obj) {
         listItemTotal.textContent = "Total"  + " : " + total + " Cookies" ; 
         list.appendChild(listItemTotal) ; 
 }
-
-
