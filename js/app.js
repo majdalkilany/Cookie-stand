@@ -1,8 +1,10 @@
+
 'use strict'
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', "12pm", '1pm',
 '2pm', '3pm', '14pm', '5pm', "6pm", '7pm','total' ];
 var total=0;
+var locationsArray = [];
 
 function Locations(name, min1 ,max1  , avrCoocHour) {
 this.name = name;
@@ -16,12 +18,13 @@ this.avgSalesHoure= [];
 
 }
 Locations.prototype.getRandomCustomNum  = function(){
-for (var i = 0; i < hours.length; i++) {
+for (var i = 0; i < 14 ; i++) {
         this.randomCostumerArray.push(getRandomNum(this.min1, this.max1))
         this.avgSalesHoure[i] = Math.ceil(6.3 * this.randomCostumerArray[i])
         total = total + this.avgSalesHoure[i]
 }
         this.avgSalesHoure.push(total);
+        total = 0;
 
 }
 function getRandomNum(min , max ) {
@@ -31,7 +34,7 @@ function getRandomNum(min , max ) {
 }
 
 // 
-// header
+// header//...................................................................
 // 
 // 
 var table1 = document.getElementById('tableContainer');
@@ -48,14 +51,17 @@ for(var i = 0; i < hours.length ;i ++){
     var th1 = document.createElement('th');
     tablehead.appendChild(th1);
     th1.textContent = hours[i];
+    
 }
-// footer
+// footer.................................................................................
 // 
-var tableFooter = document.createElement('tfoot');
-tablEl.appendChild(tableFooter);
+
+ //var totalPerHour =[0]
+ 
+
 //
 // 
-// rander footer 
+// rander  .........................................................................
 Locations.prototype.printSales  = function(){
     var tableRow = document.createElement('tr')
     tablEl.appendChild(tableRow);
@@ -64,17 +70,18 @@ Locations.prototype.printSales  = function(){
     td1.textContent = this.name;
     for( var i =0 ; i < hours.length; i++){
 
+       
+        var td1 = document.createElement('td')
+        tableRow.appendChild(td1);
+        td1.textContent = this.avgSalesHoure[i];
         if (i > 13){
             i++;
             var td1 = document.createElement('td')
             tableRow.appendChild(td1);
             td1.textContent = this.avgSalesHoure[15];
         }
-        var td1 = document.createElement('td')
-        tableRow.appendChild(td1);
-        td1.textContent = this.avgSalesHoure[i];
-
     }
+    locationsArray.push(this);
    
 
 
@@ -98,3 +105,39 @@ Locations.prototype.printSales  = function(){
     var lima = new Locations('lima',3,24,1.2);
     lima.getRandomCustomNum();
     lima.printSales();
+    var  sum    = 0
+    var  sumArr = [] ;
+
+var tableFooter = document.createElement('tfoot');
+tableFooter.setAttribute('id', 'remove');
+tablEl.appendChild(tableFooter);
+ var th1 = document.createElement('th')
+ tableFooter.appendChild(th1);
+th1.textContent = "total";
+var Ssum = 0 ; 
+for(var i = 0; i < hours.length  ;i++){
+
+for (var j =0 ; j< locationsArray.length ; j++ ){
+sum  = sum + locationsArray[j].avgSalesHoure[i] ;
+
+
+} 
+
+sumArr.push(sum);
+sum = 0
+    
+        var th1 = document.createElement('th');
+        tableFooter.appendChild(th1);
+        th1.textContent =  sumArr[i];
+    // else{
+    //     sum[i]  = seattle.avgSalesHoure[i] + tokyo.avgSalesHoure[i] +paris.avgSalesHoure[i]+dubai.avgSalesHoure[i]
+    //     +lima.avgSalesHoure[i] ;
+    //      Ssum += sum[i] ;  
+    //       var th1 = document.createElement('th');
+    //       tableFooter.appendChild(th1);
+    //       th1.textContent = sum[i];
+
+    // }
+     
+    
+  }
