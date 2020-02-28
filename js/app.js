@@ -152,8 +152,23 @@ newBranch.addEventListener('submit' , function (event){
     var min1 =  event.target.min1.value;
     var max1 =  event.target.max1.value ;
     var avrCoocHour =  event.target.avrCoocHour.value;
+
     var max1 =  event.target.avrCoocHour.value;
+
+    
+        
+      
+        
+    
+        
+    
     var majd = new Locations(name,min1,max1,avrCoocHour)
+    if (min1>max1){
+        alert("please the maximum value musrt be more than minimum")
+        return false;
+    }
+
+
     majd.getRandomCustomNum();
     majd.printSales();
 
@@ -170,8 +185,9 @@ for(var i = 0; i < hours.length  ;i++){
     newFooter.appendChild(th1);
     sumArr[i] = sumArr[i] + locationsArray[locationsArray.length - 1].avgSalesHoure[i];
     th1.textContent = sumArr[i];
-    
+
 }
+
 
 }) 
 
