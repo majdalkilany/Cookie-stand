@@ -5,7 +5,7 @@ td, th{
 
 }
 body{
-    background-image: url(img/cutter.jpg);
+    background-image: url(../img/cutter.jpg);
     padding: 10px;
     margin: 10px;
 }

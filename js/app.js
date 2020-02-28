@@ -4,6 +4,7 @@
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', "12pm", '1pm',
 '2pm', '3pm', '14pm', '5pm', "6pm", '7pm','total' ];
 var total=0;
+var locationsArray = [];
 
 function Locations(name, min1 ,max1  , avrCoocHour) {
 this.name = name;
@@ -80,6 +81,7 @@ Locations.prototype.printSales  = function(){
             td1.textContent = this.avgSalesHoure[15];
         }
     }
+    locationsArray.push(this);
    
 
 
@@ -103,31 +105,39 @@ Locations.prototype.printSales  = function(){
     var lima = new Locations('lima',3,24,1.2);
     lima.getRandomCustomNum();
     lima.printSales();
-
-    var  sum = [] ;
+    var  sum    = 0
+    var  sumArr = [] ;
 
 var tableFooter = document.createElement('tfoot');
+tableFooter.setAttribute('id', 'remove');
 tablEl.appendChild(tableFooter);
  var th1 = document.createElement('th')
  tableFooter.appendChild(th1);
-th1.textContent = "mmmm";
+th1.textContent = "total";
 var Ssum = 0 ; 
-for(var i = 0; i < hours.length  ;i ++){
-    if (i == 14) {
+for(var i = 0; i < hours.length  ;i++){
+
+for (var j =0 ; j< locationsArray.length ; j++ ){
+sum  = sum + locationsArray[j].avgSalesHoure[i] ;
+
+
+} 
+
+sumArr.push(sum);
+sum = 0
+    
         var th1 = document.createElement('th');
         tableFooter.appendChild(th1);
-        th1.textContent = Ssum + seattle.avgSalesHoure[14] + tokyo.avgSalesHoure[14] +paris.avgSalesHoure[14]+dubai.avgSalesHoure[14]
-        +lima.avgSalesHoure[14] ; 
-    }
-    else{
-        sum[i]  = seattle.avgSalesHoure[i] + tokyo.avgSalesHoure[i] +paris.avgSalesHoure[i]+dubai.avgSalesHoure[i]
-        +lima.avgSalesHoure[i] ;
-         Ssum += sum[i] ;  
-          var th1 = document.createElement('th');
-          tableFooter.appendChild(th1);
-          th1.textContent = sum[i];
+        th1.textContent =  sumArr[i];
+    // else{
+    //     sum[i]  = seattle.avgSalesHoure[i] + tokyo.avgSalesHoure[i] +paris.avgSalesHoure[i]+dubai.avgSalesHoure[i]
+    //     +lima.avgSalesHoure[i] ;
+    //      Ssum += sum[i] ;  
+    //       var th1 = document.createElement('th');
+    //       tableFooter.appendChild(th1);
+    //       th1.textContent = sum[i];
 
-    }
+    // }
      
     
   }
@@ -146,6 +156,22 @@ newBranch.addEventListener('submit' , function (event){
     var majd = new Locations(name,min1,max1,avrCoocHour)
     majd.getRandomCustomNum();
     majd.printSales();
+
+var deletFooter = document.getElementById('remove')
+tablEl.removeChild(deletFooter);
+var newFooter = document.createElement('tfoot');
+newFooter.setAttribute('id', 'remove');
+tablEl.appendChild(newFooter);
+ var th1 = document.createElement('th')
+ newFooter.appendChild(th1);
+th1.textContent = "total";
+for(var i = 0; i < hours.length  ;i++){
+    var th1 = document.createElement('th');
+    newFooter.appendChild(th1);
+    sumArr[i] = sumArr[i] + locationsArray[locationsArray.length - 1].avgSalesHoure[i];
+    th1.textContent = sumArr[i];
+    
+}
 
 }) 
 
