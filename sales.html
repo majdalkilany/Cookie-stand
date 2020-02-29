@@ -8,37 +8,91 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="tableContainer"></div>
-<header>
-</header>
+    <header>
+        <h1>Pat's Cookies Salmon</h1> 
+
+
+    </header>
+    <nav>
+        <ul>
+  <li><a class="active" href="/index.html">Home</a></li>
+  <li><a href="/sales.html"> Sales page</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+      </nav>
 <main>
     <h2></h2>
+    <div id="tableContainer"></div>
 
+    <div id="branchForm">
+
+   
     <form id="Branch">
         <fieldset>
-          <legend>Nane of the branch :</legend>
+          <legend>Name of the branch :</legend>
         <label for="name">Branch location</label>
         <br>
-        <input type="text" id="name" placeholder="Enter branch name" required>
-        <label for="minimum">branch</label>
-        <br>
-        <input type=number id="min1" placeholder="enter the maximum value " required>
-        <label for="minimum">maximum value</label>
-        <br>
-        <input type=number id="max1" placeholder="enter the minimum value " required>
-        <label for="minimum">minimum value</label>
-        <br>
-        <input type=number id="avrCoocHour" placeholder="the maximum of custmer/hour " required>
-        <label for="avg">the maximum of custmer/hour</label>
-        <br>
-        <input type="submit">
-        <form action="script.cgi" onSubmit="return checkform()">
+        <table>
+            <tr>
+                <td>
+                    <label for="minimum">branch</label>
+                   
+                    
+                </td>
+                <td>
+                    <input type="text" id="name" placeholder="Enter branch name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+    
+                    <label for="minimum">maximum value</label>
+                   
+                    
+                </td>
+                <td>
+                    <input type=number id="max1" placeholder="enter the maximum value " required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="minimum">minimum value</label>
+                   
+                    
+                </td>
+                <td>
+                    <input type=number id="min1" placeholder="enter the minimum value " required>
+                </td>
+            </tr>
+            <tr>
+                <td>
 
+                    <label for="avg">the maximum of custmer/hour</label>
+                    
+                    
+                </td>
+                <td>
+                    <input type=number id="avrCoocHour" placeholder="the maximum of custmer/hour " required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                    <form action="script.cgi" onSubmit="return checkform()">            
+                </td>
+            </tr>
+        </table>
+       
             
       </fieldset>
       </form>
-
+    </div>
 </main>
     <script src="js/app.js"></script>
+    <footer>
+        <p>
+            Copy Write for Pat's Cookies
+        </p>
+    </footer>
 </body>
 </html>

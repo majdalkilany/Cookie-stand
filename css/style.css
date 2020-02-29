@@ -1,3 +1,4 @@
+
 td, th{
     border: 1px solid black;
     padding: auto;
@@ -5,9 +6,14 @@ td, th{
 
 }
 body{
-    background-image: url(../img/cutter.jpg);
+    background-image: url(../img/mmmm.jpg);
     padding: 10px;
     margin: 10px;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    font-family: 'Fira Sans', ;
+
+
 }
 h1{
     text-align: center;
@@ -21,3 +27,142 @@ h2{
     margin: 10px;
 
 }
+#intro{
+    background-color: hsla(45, 89%, 63%, 0.8);
+    margin: 40px;
+      padding: 20px;
+      font-size: 18px;
+      font-family: 'Fira Sans', ;
+
+}
+.container img{
+    width: 300px;
+    height: auto;
+  margin-left: 95px;
+}
+
+.container p{
+    font-size: large;
+    line-height: 25px;
+}
+
+.container h2{
+  text-align: center;
+}
+.container {
+    margin:40px;
+      display: flex;
+      overflow-x: scroll;
+      flex-wrap: wrap;
+      border: 7px solid  #808080;
+      border-style: double;
+      height: 500px;
+      
+}
+    
+    .container > div {
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+      width:40%;
+      height: 90%;
+      overflow-y: auto;
+    }
+    #branch1{
+        background-color: hsla(45, 89%, 63%, 0.8);
+    }
+    #branch2{
+        background-color: hsla(45, 52%, 48%, 0.8);
+    }
+    #branch3{
+        background-color:hsla(45, 53%, 48%, 0.8);
+    }
+    
+    #branch4{
+        background-color: hsla(45, 53%, 28%, 0.8);
+    }
+    
+    #branch5{
+        background-color: hsla(45, 53%, 19%, 0.8);
+        color: wheat;
+    }
+nav {
+    position: sticky;
+    top:0px
+}
+   nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: hsla(45, 53%, 19%, 0.8);
+      }
+      
+     nav li {
+        float: left;
+      }
+      
+     nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      nav li a:hover {
+        background-color: hsla(45, 52%, 48%, 0.8);
+      }
+
+      footer{
+         text-align: center;
+         height: 80px;
+         background-color: hsl(45, 53%, 19%);
+      color: wheat;
+      padding-top: 50px;
+      font-size: 20px;
+      }
+
+
+
+      #t01 {
+        width:100%;
+      }
+      table#t01 , th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+     table#t01 th, td {
+        padding: 15px;
+        text-align: left;
+      }
+      table#t01 tr:nth-child(even) {
+        background-color: #eee;
+      }
+      table#t01 tr:nth-child(odd) {
+       background-color: #fff;
+      }
+      table#t01 th {
+        background-color: black;
+        color: white;
+      }
+
+      #branchForm{
+       
+        padding: 15px;
+
+      }
+
+      fieldset{
+          border: 5px solid  hsl(45, 52%, 48%) ;
+      }
+      legend{
+          font-size: 30px;
+          color:  black;
+          text-shadow: 2px 2px hsl(45, 52%, 48%);
+
+      }
+      input{
+          height: 25px;
+      }

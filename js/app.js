@@ -39,6 +39,7 @@ function getRandomNum(min , max ) {
 // 
 var table1 = document.getElementById('tableContainer');
 var tablEl = document.createElement('table');
+tablEl.setAttribute('id','t01');
 table1.appendChild(tablEl);
 
 var tablehead = document.createElement('thead')
@@ -153,18 +154,12 @@ newBranch.addEventListener('submit' , function (event){
     var max1 =  event.target.max1.value ;
     var avrCoocHour =  event.target.avrCoocHour.value;
 
-    var max1 =  event.target.avrCoocHour.value;
+    // var max1 =  event.target.avrCoocHour.value;
 
-    
-        
-      
-        
-    
-        
-    
     var majd = new Locations(name,min1,max1,avrCoocHour)
     if (min1>max1){
         alert("please the maximum value musrt be more than minimum")
+        location.reload ; 
         return false;
     }
 
